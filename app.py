@@ -69,10 +69,9 @@ async def main():
         # print(terminal_text.strip())
 
         minutos = 15
-        await asyncio.sleep(minutos * 60)
+        # await asyncio.sleep(minutos * 60)
+        await page.wait_for_timeout(minutos * 60 * 1000)
         await page.screenshot(path="screen.png", full_page=True)
-
-        # await page.wait_for_timeout(minutos * 60 * 1000)
 
 if __name__ == "__main__":
     asyncio.run(main())
